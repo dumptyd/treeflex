@@ -1,0 +1,118 @@
+.demo-tree-sm { display: none; }
+
+.brand {
+  margin: 0;
+  font-family: $header_font_family;
+  text-transform: uppercase;
+}
+
+.fixed-width-nodes span {
+  min-width: 4em;
+  max-width: 4em;
+}
+
+.hljs {
+  padding: 1rem;
+}
+
+
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+.mt-0 { margin-top: 0; }
+
+.container {
+  max-width: 1168px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  .container-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    >a { font-size: .65em; margin-left: .75rem; text-decoration: none; }
+  }
+}
+
+.example {
+  margin-bottom: 3rem;
+}
+.example .content {
+  display: flex;
+  height: 350px;
+
+  * { box-sizing: border-box; }
+  
+  >div {
+    flex-shrink: 0;
+    flex-grow: 1;
+    height: 100%;
+    min-height: 100%;
+
+    &:not(:first-child) {
+      padding-left: 1rem;
+    }
+  }
+  .description { max-width: 30%; min-width: 30%; }
+  .code {
+    max-width: 40%;
+    min-width: 40%;
+
+    pre, code { height: 100%; }
+  }
+  .result {
+    max-width: 30%;
+    min-width: 30%;
+
+    >div {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: center;
+      height: 100%;
+      overflow: auto;
+    }
+    .tf-tree {
+      overflow: initial;
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  padding: 1rem 0;
+  &>div:last-child { margin-left: auto; }
+}
+
+
+@media (max-width: 992px) {
+  .example .content {
+    flex-direction: column;
+    >div:not(:first-child) { margin-top: 1rem; }
+  }
+  .example .content {
+    height: auto;
+    flex-direction: column;
+
+    >div {
+      &:not(:first-child) {
+        margin-top: 1rem;
+        padding-left: 0;
+      }
+    }
+    .description { max-width: 100%; min-width: 100%; }
+    .code {
+      max-width: 100%;
+      min-width: 100%;
+
+      pre, code { max-height: 350px; }
+    }
+    .result {
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .demo-tree { display: none; }
+  .demo-tree-sm { display: block; }
+}

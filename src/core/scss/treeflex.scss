@@ -1,0 +1,150 @@
+$primary_color: #000;
+$scaling_factor: 1;
+
+$node_gap: 1em; /* setting a size in em makes sure that the gap scales too with the scaling factor */
+$sm_node_gap: $node_gap * .6;
+$lg_node_gap: $node_gap * 1.5;
+
+$connector_width: .0625em;
+$connector_style: solid;
+
+.tf-tree {
+  overflow: auto;
+  font-size: 16px * $scaling_factor;
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  ul { display: inline-flex; }
+
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 $node_gap;
+
+    /* node content */
+    span:first-child, div:first-child, .tf-node-content:first-child {
+      position: relative;
+      display: inline-block;
+      border: $connector_width solid $primary_color;
+      padding: ($node_gap / 2) $node_gap;
+      
+      &:before {
+        position: absolute;
+        display: block;
+        height: $node_gap;
+        left: calc(50% - #{$connector_width / 2});
+        top: calc(#{-$node_gap} - #{$connector_width / 2});
+        content: '';
+        border-left: $connector_width $connector_style $primary_color;
+        width: $connector_width;
+      }
+      
+      &:after {
+        position: absolute;
+        display: block;
+        height: $node_gap;
+        left: calc(50% - #{$connector_width / 2});
+        top: calc(100% + #{$connector_width / 2});
+        content: '';
+        border-left: $connector_width $connector_style $primary_color;
+        width: $connector_width;
+      }
+      &:only-child:after { display: none; }
+    }
+    
+
+    ul { margin: ($node_gap * 2) 0; }
+    
+    li:before {
+      display: block;
+      position: absolute;
+      width: 100%;
+      left: calc(0% - #{$connector_width / 2});
+      top: calc(#{-$node_gap} - #{$connector_width / 2});
+      content: '';
+      border-top: $connector_width $connector_style $primary_color;
+      height: $connector_width;
+    }
+    
+    li:first-child:before {
+      left: calc(50% - #{$connector_width / 2});
+      max-width: calc(100% - 50% + #{$connector_width});
+    }
+    li:last-child:before {
+      left: auto;
+      right: calc(50% - #{$connector_width / 2});
+      max-width: calc(100% - 50% + #{$connector_width});
+    }
+    li:only-child:before,
+    li:only-child > span:first-child:before,
+    li:only-child > div:first-child:before,
+    li:only-child > .tf-node-content:first-child:before { display: none; }
+    li:only-child { margin: -$node_gap; }
+  }
+  
+  >ul>li>span:first-child:before, >ul>li>div:first-child:before, >ul>li>.tf-node-content:first-child:before { display: none; }
+
+  &.tf-gap-sm li {
+    padding: 0 $sm_node_gap;
+    span:first-child, div:first-child, .tf-node-content:first-child {
+      
+      &:before {
+        height: $sm_node_gap;
+        top: -$sm_node_gap;
+      } 
+      &:after { height: $sm_node_gap; }
+    } 
+    ul { margin: ($sm_node_gap * 2) 0; }
+    li:before { top: calc(#{-$sm_node_gap} - #{$connector_width / 2}); }
+    li:only-child { margin: -$sm_node_gap; }
+  }
+  
+  &.tf-gap-lg li {
+    padding: 0 $lg_node_gap;
+    span:first-child, div:first-child, .tf-node-content:first-child {
+      &:before {
+        height: $lg_node_gap;
+        top: -$lg_node_gap;
+      } 
+      &:after { height: $lg_node_gap; }
+    } 
+    ul { margin: ($lg_node_gap * 2) 0; }
+    li:before { top: calc(#{-$lg_node_gap} - #{$connector_width / 2}); }
+    li:only-child { margin: -$lg_node_gap; }
+  }
+
+  li.tf-dotted-children {
+    span:first-child,
+    div:first-child,
+    .tf-node-content:first-child {
+      &:before, &:after { border-left-style: dotted; }
+    }
+    li:before { border-top-style: dotted; }
+
+    >span:first-child:before,
+    >div:first-child:before,
+    >.tf-node-content:first-child:before {
+      border-left-style: solid;
+    }
+  }
+  li.tf-dashed-children {
+    span:first-child,
+    div:first-child,
+    .tf-node-content:first-child {
+      &:before, &:after { border-left-style: dashed; }
+    }
+    li:before { border-top-style: dashed; }
+
+    >span:first-child:before,
+    >div:first-child:before,
+    >.tf-node-content:first-child:before {
+      border-left-style: solid;
+    }
+  }
+}

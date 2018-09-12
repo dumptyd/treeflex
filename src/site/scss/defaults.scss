@@ -1,0 +1,120 @@
+html {
+  font-size: 16px;
+  margin: 0; padding: 0;
+}
+
+body {
+  margin: 0; padding: 0;
+  background-color: $color_bg;
+  font-family: $body_font_family;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #222;
+}
+
+p { margin-bottom: 1.3em; }
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: $header_font_family;
+  font-weight: 700;
+  line-height: 1.2;
+}
+h1, .text-xl {
+  margin-top: 0;
+  font-size: 2.441em;
+}
+h2, .text-lg { font-size: 1.953em; }
+h3, .text-md { font-size: 1.563em; }
+h4, .text-sm { font-size: 1.25em; }
+
+small, .text-xs { font-size: 0.8em; }
+
+a {
+  color: inherit;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: .75rem 1.25rem;
+  border-bottom: .25rem solid $color_dark;
+
+  >div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &:last-child {
+      margin-left: auto;
+    }
+
+    a {
+      margin: 0 1rem;
+      text-decoration: none;
+      &:after {
+        position: absolute;
+        top: 100%; left: 0;
+        content: '';
+        height: .125rem; width: 100%;
+        background-color: $color_dark;
+        transition: .125s transform ease-in-out;
+        transform: scaleX(0);
+        transform-origin: center;
+      }
+      &:not(.brand):hover:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+pre { margin: 0; }
+
+pre:not(.unstyled) {
+  padding: 1rem;
+  background-color: #eee;
+  color: #000;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+code:not(.unstyled) {
+  font-family: monospace, monospace;
+  background-color: #eee;
+  padding: .125em .25em;
+  margin: 0 .25em;
+  border-radius: 3px;
+}
+
+
+hr {
+  height: 1px;
+  color: #aaa;
+  background-color: #ccc;
+  border: none;
+  display: block;
+  margin: 2rem 0;
+}
+
+footer {
+  background-color: $color_dark;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  body { font-size: 12px; }
+
+  nav {
+    flex-direction: column;
+    >div:last-child {
+      justify-content: space-between;
+      margin: .75rem 1rem;
+      >a {
+        margin: .5rem 1rem;
+      }
+    }
+  }
+}

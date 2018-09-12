@@ -1,0 +1,17 @@
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border-bottom: .0625rem solid $color_dark;
+  padding: 5rem 2.5rem 2rem;
+  .brand { margin-bottom: .5em; }
+  * { text-align: center; }
+  >.trees {
+    margin-top: 2.5rem;
+  }
+}
+#installation, #usage, #examples {
+  padding: 1rem 0 3rem 0;
+  border-bottom: .0625rem solid $color_dark;
+}
