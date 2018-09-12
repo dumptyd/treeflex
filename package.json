@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "parcel src/site/index.html -d docs_dev --open --port 8080",
-    "build": "rm -rf dist docs && parcel build src/site/index.html -d docs --no-source-maps && parcel build src/core/js/treeflex.js src/core/scss/treeflex.scss -d dist/css"
+    "build": "rm -rf dist docs && parcel build src/site/index.html --public-url /treeflex/ -d docs --no-source-maps && parcel build src/core/js/treeflex.js src/core/scss/treeflex.scss -d dist/css"
   },
   "files": ["dist/", "src/"],
   "author": "dumptyd",
