@@ -76,6 +76,23 @@
   }
 }
 
+.button {
+  display: inline-block;
+  border: 2px solid $color_dark;
+  padding: .75rem 2.5rem;
+  text-decoration: none;
+  transition: .2s background-color ease-in, .2s color ease-in;
+  &:hover {
+    background-color: $color_dark;
+    color: #fafafa;
+  }
+}
+
+.try-it-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
 .footer-content {
   display: flex;
   padding: 1rem 0;
