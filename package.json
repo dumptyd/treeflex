@@ -1,10 +1,10 @@
 {
   "name": "treeflex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Treeflex is a flexbox based CSS library for drawing hierarchy trees with HTML lists.",
   "keywords": ["css", "flexbox", "scss", "hierarchy tree", "tree", "css tree"],
   "main": "/docs/index.html",
-  "dependencies": {
+  "devDependencies": {
     "dev": "^0.1.3",
     "highlight.js": "^9.12.0",
     "node-sass": "^4.9.3",
@@ -14,7 +14,7 @@
     "start": "parcel src/site/index.html -d docs_dev --open --port 8080",
     "build": "rm -rf dist docs && parcel build src/site/index.html -d docs --no-source-maps && parcel build src/core/js/treeflex.js src/core/scss/treeflex.scss -d dist/css"
   },
-  "files": ["dist/"],
+  "files": ["dist/", "src/"],
   "author": "dumptyd",
   "license": "MIT"
 }
