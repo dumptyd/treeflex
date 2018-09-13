@@ -1,3 +1,8 @@
+# 2.0.1
+
+- I forgot to put a comma which messed up a selector for `li` elements with no siblings causing unexpected behavior with vertical connectors. That comma is back in its place.
+- Earlier when there was an `li` element with no siblings, I was hiding its :before connector but this wasn't looking good with complex trees, all the connectors are shown as is now.
+
 # 2.0.0
 
 - Node content only works with elements that have `.tf-node-content` or `.tf-nc` class now.
