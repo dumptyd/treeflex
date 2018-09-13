@@ -27,38 +27,6 @@ $connector_style: solid;
     align-items: center;
     padding: 0 $node_gap;
 
-    /* node content */
-    span:first-child, div:first-child, .tf-node-content:first-child {
-      position: relative;
-      display: inline-block;
-      border: $connector_width solid $primary_color;
-      padding: ($node_gap / 2) $node_gap;
-      
-      &:before {
-        position: absolute;
-        display: block;
-        height: $node_gap;
-        left: calc(50% - #{$connector_width / 2});
-        top: calc(#{-$node_gap} - #{$connector_width / 2});
-        content: '';
-        border-left: $connector_width $connector_style $primary_color;
-        width: $connector_width;
-      }
-      
-      &:after {
-        position: absolute;
-        display: block;
-        height: $node_gap;
-        left: calc(50% - #{$connector_width / 2});
-        top: calc(100% + #{$connector_width / 2});
-        content: '';
-        border-left: $connector_width $connector_style $primary_color;
-        width: $connector_width;
-      }
-      &:only-child:after { display: none; }
-    }
-    
-
     ul { margin: ($node_gap * 2) 0; }
     
     li:before {
@@ -82,18 +50,47 @@ $connector_style: solid;
       max-width: calc(100% - 50% + #{$connector_width});
     }
     li:only-child:before,
-    li:only-child > span:first-child:before,
-    li:only-child > div:first-child:before,
-    li:only-child > .tf-node-content:first-child:before { display: none; }
+    li:only-child > .tf-node-content:before
+    li:only-child > .tf-nc:before { display: none; }
+
     li:only-child { margin: -$node_gap; }
   }
+
+  .tf-node-content, .tf-nc {
+    position: relative;
+    display: inline-block;
+    border: $connector_width solid $primary_color;
+    padding: ($node_gap / 2) $node_gap;
+
+    &:before {
+      position: absolute;
+      display: block;
+      height: $node_gap;
+      left: calc(50% - #{$connector_width / 2});
+      top: calc(#{-$node_gap} - #{$connector_width / 2});
+      content: '';
+      border-left: $connector_width $connector_style $primary_color;
+      width: $connector_width;
+    }
+
+    &:after {
+      position: absolute;
+      display: block;
+      height: $node_gap;
+      left: calc(50% - #{$connector_width / 2});
+      top: calc(100% + #{$connector_width / 2});
+      content: '';
+      border-left: $connector_width $connector_style $primary_color;
+      width: $connector_width;
+    }
+    &:only-child:after { display: none; }
+  }
   
-  >ul>li>span:first-child:before, >ul>li>div:first-child:before, >ul>li>.tf-node-content:first-child:before { display: none; }
+  >ul>li>.tf-node-content:before, >ul>li>.tf-nc:before { display: none; }
 
   &.tf-gap-sm li {
     padding: 0 $sm_node_gap;
-    span:first-child, div:first-child, .tf-node-content:first-child {
-      
+    >.tf-node-content, >.tf-nc {
       &:before {
         height: $sm_node_gap;
         top: -$sm_node_gap;
@@ -107,7 +104,7 @@ $connector_style: solid;
   
   &.tf-gap-lg li {
     padding: 0 $lg_node_gap;
-    span:first-child, div:first-child, .tf-node-content:first-child {
+    >.tf-node-content, >.tf-nc {
       &:before {
         height: $lg_node_gap;
         top: -$lg_node_gap;
@@ -120,30 +117,23 @@ $connector_style: solid;
   }
 
   li.tf-dotted-children {
-    span:first-child,
-    div:first-child,
-    .tf-node-content:first-child {
+    .tf-node-content, .tf-nc {
       &:before, &:after { border-left-style: dotted; }
     }
     li:before { border-top-style: dotted; }
 
-    >span:first-child:before,
-    >div:first-child:before,
-    >.tf-node-content:first-child:before {
+    >.tf-node-content:before, >.tf-nc:before {
       border-left-style: solid;
     }
   }
+
   li.tf-dashed-children {
-    span:first-child,
-    div:first-child,
-    .tf-node-content:first-child {
+    .tf-node-content, .tf-nc {
       &:before, &:after { border-left-style: dashed; }
     }
     li:before { border-top-style: dashed; }
 
-    >span:first-child:before,
-    >div:first-child:before,
-    >.tf-node-content:first-child:before {
+    >.tf-node-content:before, >.tf-nc:before {
       border-left-style: solid;
     }
   }

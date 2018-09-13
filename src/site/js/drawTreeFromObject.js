@@ -16,7 +16,7 @@ export const createEl = (el, content, classList = [], isContentElement = false) 
 
 const createTree = (parent, arr) => {
   arr.forEach(item => {
-    const li = createEl('li', createEl('span', item.text), [], true);
+    const li = createEl('li', createEl('span', item.text, ['tf-nc']), [], true);
     parent.appendChild(li);
     if (item.children && item.children.length) {
       const childUl = createEl('ul');

@@ -26,10 +26,10 @@
   </nav>
 
   <section id="intro">
-    <h1 class="brand">TreeFlex <sub class="text-xs"><small>1.0.2</small></sub></h1>
+    <h1 class="brand">TreeFlex <sub class="text-xs"><small>2.0.0</small></sub></h1>
     <div class="text-lg">A library for drawing hierarchy trees with CSS</div>
     <div class="try-it-container">
-      <a href="https://jsfiddle.net/dumptyd/bfd2xwvq/" target="_blank" class="button">Try it live &rarr;</a>
+      <a href="https://jsfiddle.net/dumptyd/zpac63y8/" target="_blank" class="button">Try it live &rarr;</a>
     </div>
     <div class="trees">
       <div class="demo-tree fixed-width-nodes tf-gap-lg"></div>
@@ -58,8 +58,7 @@
 
       <p>Creating trees with Treeflex is as simple as writing nested HTML lists. Treeflex needs a block-level element with a <code>tf-tree</code> class and an unordered list (<code>ul</code>) as a direct child of the element.</p>
 
-      <p>Each <code>li</code> element's <strong>first</strong> <code>span</code>, <code>div</code> or
-      any element with a <code>tf-node-content</code> class is used as that node's content. One of these three elements are required in each <code>li</code> element.</p>
+      <p>Each <code>li</code> element's <strong>first child</strong> with a <code>tf-node-content</code> class (or <code>tf-nc</code> for short) is used as that node's content. This is required. You can use whatever tag you like for node content, however it is suggested that you use a <code>span</code> or <code>div</code> element.</p>
 
       <p>Each <code>li</code> element that is not the leaf node should have an <strong>unordered list (<code>ul</code>) as its second child</strong>. Each <code>li</code> element inside this <code>ul</code> acts as this node's child.</p>
 
@@ -135,12 +134,15 @@
       <p>
         Treeflex comes with a few utility classes to help customize the trees. These are:
         <ul>
-           <li><code>tf-gap-sm</code></li>
-           <li><code>tf-gap-lg</code></li>
-           <li><code>tf-dashed-children</code></li>
-           <li><code>tf-dotted-children</code></li>
+          <li><code>tf-nc</code></li>
+          <li><code>tf-gap-sm</code></li>
+          <li><code>tf-gap-lg</code></li>
+          <li><code>tf-dashed-children</code></li>
+          <li><code>tf-dotted-children</code></li>
          </ul>
        </p>
+      
+      <p><code>tf-nc</code> is just short for <code>tf-node-content</code>. You can use either of these for node content.</p>
 
       <p><code>tf-gap-*</code> classes go on the <code>tf-tree</code> element. These classes increase and decrease the gap between the nodes.</p>
 
@@ -188,15 +190,15 @@
         Trees can be customized with your own styles. Here are the classes/elements you need to target to change various aspects of the tree.
         
         <br>
-        <small>For node content related styles, only <code>span</code> elements are mentioned for brevity, these styles can and should be applied to <code>div</code> &amp; <code>.tf-node-content</code> too if that's what you choose to use. </small>
+        <small>For node content related styles, only <code>tf-nc</code> class is used for brevity, these styles can and should be applied to <code>.tf-node-content</code> too if that's what you choose to use. </small>
         
         <div>
           <h3>Styling the nodes</h3>
-          <strong>Selector: </strong> <code>.tf-tree li span:first-child</code>
+          <strong>Selector: </strong> <code>.tf-tree .tf-nc</code>
           <p>
             This selector can be used to style the look &amp; feel of the nodes.
             <br>
-            There are some limitations to this though, you should not change the margins and the pseudo elements (<code>:before, :after</code>) of these elements unless you absolutely know what you're doing. CSS transforms don't work well on these elements either. You can always apply the transforms and other styles to the elements inside though. It's also best to avoid using <code>ul</code> inside node content.
+            There are some limitations to this though, you should not change the margins and the pseudo elements (<code>:before, :after</code>) of these elements unless you absolutely know what you're doing. CSS transforms don't work well on these elements either. You can always apply the transforms and other styles to the elements inside though. It's also best to avoid using <code>ul</code> and <code>li</code> elements inside node content.
           </p>
 
 
@@ -210,7 +212,7 @@
         
         <div>
           <h3>Styling the vertical node connectors</h3>
-          <strong>Selector: </strong> <code>.tf-tree li span:first-child:before, .tf-tree li span:first-child:after</code>
+          <strong>Selector: </strong> <code>.tf-tree .tf-nc:before, .tf-tree .tf-nc:after</code>
           <p>These selectors can be used to style the vertical node connectors. For instance, you can use these to increase the width or border-style of the connectors.</p>
         </div>
 
@@ -226,6 +228,23 @@
         <div class="content">
           <div class="description">
             This example demonstrates how these selectors can be used.
+          </div>
+          <div class="code">
+            <pre class="unstyled"><code class="html hljs unstyled"></code></pre>
+          </div>
+          <div class="result">
+            <div>Loading...</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="example example-ancestor">
+        <h3>Ancestor tree</h3>
+        <div class="content">
+          <div class="description">
+            While ancestor or upside-down trees are not supported out of the box, it can be implemented easily with some custom styles. This example shows how to do that.
           </div>
           <div class="code">
             <pre class="unstyled"><code class="html hljs unstyled"></code></pre>

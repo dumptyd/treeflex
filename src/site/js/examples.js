@@ -6,10 +6,10 @@ const examples = [{
   code: `<div class="tf-tree">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
-        <li><span>2</span></li>
-        <li><span>3</span></li>
+        <li><span class="tf-nc">2</span></li>
+        <li><span class="tf-nc">3</span></li>
       </ul>
     </li>
   </ul>
@@ -33,27 +33,27 @@ const examples = [{
   code: `<div class="tf-tree">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
         <li>
-          <span>2</span>
+          <span class="tf-nc">2</span>
           <ul>
-            <li><span>4</span></li>
+            <li><span class="tf-nc">4</span></li>
             <li>
-              <span>5</span>
+              <span class="tf-nc">5</span>
               <ul>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
+                <li><span class="tf-nc">9</span></li>
+                <li><span class="tf-nc">10</span></li>
               </ul>
             </li>
-            <li><span>6</span></li>
+            <li><span class="tf-nc">6</span></li>
           </ul>
         </li>
         <li>
-          <span>3</span>
+          <span class="tf-nc">3</span>
           <ul>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
+            <li><span class="tf-nc">7</span></li>
+            <li><span class="tf-nc">8</span></li>
           </ul>
         </li>
       </ul>
@@ -66,27 +66,27 @@ const examples = [{
   code: `<div class="tf-tree" style="font-size: 8px;">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
         <li>
-          <span>2</span>
+          <span class="tf-nc">2</span>
           <ul>
-            <li><span>4</span></li>
+            <li><span class="tf-nc">4</span></li>
             <li>
-              <span>5</span>
+              <span class="tf-nc">5</span>
               <ul>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
+                <li><span class="tf-nc">9</span></li>
+                <li><span class="tf-nc">10</span></li>
               </ul>
             </li>
-            <li><span>6</span></li>
+            <li><span class="tf-nc">6</span></li>
           </ul>
         </li>
         <li>
-          <span>3</span>
+          <span class="tf-nc">3</span>
           <ul>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
+            <li><span class="tf-nc">7</span></li>
+            <li><span class="tf-nc">8</span></li>
           </ul>
         </li>
       </ul>
@@ -100,10 +100,10 @@ const examples = [{
 <div class="tf-tree tf-gap-sm">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
-        <li><span>2</span></li>
-        <li><span>3</span></li>
+        <li><span class="tf-nc">2</span></li>
+        <li><span class="tf-nc">3</span></li>
       </ul>
     </li>
   </ul>
@@ -113,10 +113,10 @@ const examples = [{
 <div class="tf-tree">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
-        <li><span>2</span></li>
-        <li><span>3</span></li>
+        <li><span class="tf-nc">2</span></li>
+        <li><span class="tf-nc">3</span></li>
       </ul>
     </li>
   </ul>
@@ -126,10 +126,10 @@ const examples = [{
 <div class="tf-tree tf-gap-lg">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
-        <li><span>2</span></li>
-        <li><span>3</span></li>
+        <li><span class="tf-nc">2</span></li>
+        <li><span class="tf-nc">3</span></li>
       </ul>
     </li>
   </ul>
@@ -140,27 +140,27 @@ const examples = [{
   code: `<div class="tf-tree">
   <ul>
     <li>
-      <span>1</span>
+      <span class="tf-nc">1</span>
       <ul>
         <li class="tf-dashed-children">
-          <span>2</span>
+          <span class="tf-nc">2</span>
           <ul>
-            <li><span>4</span></li>
+            <li><span class="tf-nc">4</span></li>
             <li>
-              <span>5</span>
+              <span class="tf-nc">5</span>
               <ul>
-                <li><span>9</span></li>
-                <li><span>10</span></li>
+                <li><span class="tf-nc">9</span></li>
+                <li><span class="tf-nc">10</span></li>
               </ul>
             </li>
-            <li><span>6</span></li>
+            <li><span class="tf-nc">6</span></li>
           </ul>
         </li>
         <li class="tf-dotted-children">
-          <span>3</span>
+          <span class="tf-nc">3</span>
           <ul>
-            <li><span>7</span></li>
-            <li><span>8</span></li>
+            <li><span class="tf-nc">7</span></li>
+            <li><span class="tf-nc">8</span></li>
           </ul>
         </li>
       </ul>
@@ -173,7 +173,7 @@ const examples = [{
   code: `<style>
   /* make the nodes round and change their background-color */
 
-  .tf-custom li span:first-child {
+  .tf-custom .tf-nc {
     height: 1em; width: 1em;
     background-color: dodgerblue;
     border-color: dodgerblue;
@@ -183,8 +183,8 @@ const examples = [{
 
   /* make the horizontal and vertical connectors thick and change their color */
 
-  .tf-custom li span:first-child:before,
-  .tf-custom li span:first-child:after {
+  .tf-custom .tf-nc:before,
+  .tf-custom .tf-nc:after {
     border-left-color: dodgerblue;
     border-left-width: 2px;
   }
@@ -197,20 +197,57 @@ const examples = [{
 <div class="tf-tree tf-custom">
   <ul>
     <li>
-      <span></span>
+      <span class="tf-nc"></span>
       <ul>
         <li>
-          <span></span>
+          <span class="tf-nc"></span>
           <ul>
-            <li><span></span></li>
-            <li><span></span></li>
+            <li><span class="tf-nc"></span></li>
+            <li><span class="tf-nc"></span></li>
           </ul>
         </li>
         <li>
-          <span></span>
+          <span class="tf-nc"></span>
           <ul>
-            <li><span></span></li>
-            <li><span></span></li>
+            <li><span class="tf-nc"></span></li>
+            <li><span class="tf-nc"></span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>`
+}, {
+  className: 'example-ancestor',
+  useCode: true,
+  code: `<style>
+  /* make the nodes round and change their background-color */
+  .tf-ancestor-tree { position: relative; }
+  .tf-ancestor-tree > ul { transform: rotateX(180deg); }
+  .tf-ancestor-tree li ul { margin-bottom: 1em; }
+  
+  .node-text {
+    display: inline-block;
+    transform: rotateX(180deg);
+  }
+</style>
+<div class="tf-tree tf-ancestor-tree">
+  <ul>
+    <li>
+      <span class="tf-nc"><span class="node-text">1</span></span>
+      <ul>
+        <li>
+          <span class="tf-nc"><span class="node-text">2</span></span>
+          <ul>
+            <li><span class="tf-nc"><span class="node-text">4</span></span></li>
+            <li><span class="tf-nc"><span class="node-text">5</span></span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="tf-nc"><span class="node-text">3</span></span>
+          <ul>
+            <li><span class="tf-nc"><span class="node-text">6</span></span></li>
+            <li><span class="tf-nc"><span class="node-text">7</span></span></li>
           </ul>
         </li>
       </ul>
