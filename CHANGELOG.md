@@ -1,3 +1,7 @@
+# 2.0.2
+
+- Changes to remove deprecation warnings related to Dart Saas divisions.
+
 # 2.0.1
 
 - I forgot to put a comma which messed up a selector for `li` elements with no siblings causing unexpected behavior with vertical connectors. That comma is back in its place.
