@@ -62,7 +62,7 @@ $connector_style: solid;
     position: relative;
     display: inline-block;
     border: $connector_width solid $primary_color;
-    padding: ($node_gap / 2) $node_gap;
+    padding: calc($node_gap / 2) $node_gap;
 
     &:before {
       position: absolute;

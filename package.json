@@ -1,6 +1,6 @@
 {
   "name": "treeflex",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Treeflex is a flexbox based CSS library for drawing hierarchy trees with HTML lists.",
   "keywords": ["css", "flexbox", "scss", "hierarchy tree", "tree", "css tree"],
   "main": "/docs/index.html",
